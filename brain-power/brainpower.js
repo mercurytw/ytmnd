@@ -61,7 +61,8 @@ function update() {
 		rate_timer += percent_time;
 		ticks += 1;
 		if (looping) {
-			rate += 0.0005;
+			rate -= 0.0005;
+			rate = Math.min(0.0005, rate);
 			loop.rate(rate);
 		}
 	}
